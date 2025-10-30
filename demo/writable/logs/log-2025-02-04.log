@@ -1,0 +1,56 @@
+CRITICAL - 2025-02-04 00:23:24 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-04 01:23:36 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-04 01:27:12 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-04 01:27:36 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-04 17:44:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

@@ -1,0 +1,317 @@
+CRITICAL - 2025-02-05 01:42:08 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 02:16:32 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "${BASE_URL}noticia"
+[Method: GET, Route: $%7BBASE_URL%7Dnoticia/$%7Bitem.urlAmigable%7D]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('${BASE_URL}noticia/${item.urlAmigable}')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('${BASE_URL}noticia/${item.urlAmigable}')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 02:29:05 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "}"
+[Method: GET, Route: %7D]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('}')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('}')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-05 03:15:27 --> mysqli_sql_exception: Unknown table 'proyectoimagenes' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `proyect...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyect...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyect...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyect...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', 'asc', 'nombre', '', 21, 0, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-05 03:15:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'proyectoimagenes'
+[Method: POST, Route: ProyectoController/proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', 'asc', 'nombre', '', 21, 0, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 03:15:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'proyectoimagenes'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', 'asc', 'nombre', '', 21, 0, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 03:15:27 --> [Caused by] mysqli_sql_exception: Unknown table 'proyectoimagenes'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', 'asc', 'nombre', '', 21, 0, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-05 03:15:32 --> mysqli_sql_exception: Unknown table 'proyectoimagenes' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `proyect...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyect...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyect...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyect...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', '', '', '', 21, 0, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-05 03:15:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'proyectoimagenes'
+[Method: GET, Route: ProyectoController/proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', '', '', '', 21, 0, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 03:15:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'proyectoimagenes'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', '', '', '', 21, 0, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 03:15:32 --> [Caused by] mysqli_sql_exception: Unknown table 'proyectoimagenes'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = 21')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, `proyectoimagenes`.*, (select e.nombre from estados e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+LEFT JOIN `proyectoimagen` ON `proyectos`.`idproyecto` = `proyectoimagen`.`idproyecto`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Proyecto.php(96): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/ProyectoController.php(28): App\Entities\Proyecto::buscarPor('', '', '', '', 21, 0, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\ProyectoController->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ProyectoController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 03:18:23 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 04:01:12 --> ParseError: syntax error, unexpected token "}", expecting ";"
+[Method: GET, Route: noticia/equipo-de-filtracion-%28dializador%29-para-combusible-diesel-db65]
+in APPPATH/Views/front/body/noticiaDetalle.php on line 139.
+ 1 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/noticiaDetalle', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/noticiaDetalle', [...])
+ 4 APPPATH/Controllers/Front.php(111): App\Controllers\BaseController->front_views('front/body/noticiaDetalle', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->noticiaDetalle('equipo-de-filtracion-(dializador)-para-combusible-diesel-db65')
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-05 04:21:42 --> mysqli_sql_exception: Unknown column 'noticias.idpcategoria' in 'where clause' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticia...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticia...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticia...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticia...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Noticia.php(94): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(104): App\Entities\Noticia::buscarPor('random', 'random', '', '', 25, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->noticiaDetalle('equipo-de-filtr...')
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-05 04:21:42 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'noticias.idpcategoria' in 'where clause'
+[Method: GET, Route: noticia/equipo-de-filtracion-%28dializador%29-para-combusible-diesel-db65]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY RAND()', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Noticia.php(94): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(104): App\Entities\Noticia::buscarPor('random', 'random', '', '', 25, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->noticiaDetalle('equipo-de-filtracion-(dializador)-para-combusible-diesel-db65')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 04:21:42 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'noticias.idpcategoria' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY RAND()')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY RAND()')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY RAND()', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Noticia.php(94): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(104): App\Entities\Noticia::buscarPor('random', 'random', '', '', 25, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->noticiaDetalle('equipo-de-filtracion-(dializador)-para-combusible-diesel-db65')
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-05 04:21:42 --> [Caused by] mysqli_sql_exception: Unknown column 'noticias.idpcategoria' in 'where clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY RAND()', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY RAND()')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY RAND()')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado, (select p.nombre from parametros p where noticias.idpcategoria=p.idparametro) as categoria
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY RAND()', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Noticia.php(94): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(104): App\Entities\Noticia::buscarPor('random', 'random', '', '', 25, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->noticiaDetalle('equipo-de-filtracion-(dializador)-para-combusible-diesel-db65')
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

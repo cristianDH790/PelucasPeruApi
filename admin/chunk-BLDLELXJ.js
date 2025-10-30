@@ -1,0 +1,1 @@
+var r=class{ordenCriterio;ordenTipo;parametro;valor;idEstado;idTipo;pagina;registros;constructor(i,s,t,n,o,e,g,a){this.ordenCriterio=i,this.ordenTipo=s,this.parametro=t,this.valor=n,this.idEstado=o,this.idTipo=e,this.pagina=g,this.registros=a}};export{r as a};

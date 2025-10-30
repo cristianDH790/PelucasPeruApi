@@ -1,0 +1,43 @@
+CRITICAL - 2025-10-06 18:05:40 --> ErrorException: Undefined variable $noticiaCategoria
+[Method: GET, Route: blog]
+in APPPATH/Views/front/body/blog.php on line 46.
+ 1 APPPATH/Views/front/body/blog.php(46): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/pelucasperu/public_html/demo/app/Views/front/body/blog.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BaseController.php(65): view()
+ 6 APPPATH/Controllers/Front.php(67): App\Controllers\BaseController->front_views()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->blog()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-06 19:33:01 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/blogDetalle.php"
+[Method: GET, Route: blog-detalle]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile()
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 3 APPPATH/Controllers/BaseController.php(65): view()
+ 4 APPPATH/Controllers/Front.php(74): App\Controllers\BaseController->front_views()
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->blogDetalle()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()
+CRITICAL - 2025-10-06 19:33:56 --> ErrorException: Undefined variable $noticia
+[Method: GET, Route: blog-detalle]
+in APPPATH/Views/front/body/blogDetalle.php on line 19.
+ 1 APPPATH/Views/front/body/blogDetalle.php(19): CodeIgniter\Debug\Exceptions->errorHandler()
+ 2 SYSTEMPATH/View/View.php(234): include('/home/pelucasperu/public_html/demo/app/Views/front/body/blogDetalle.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render()
+ 5 APPPATH/Controllers/BaseController.php(65): view()
+ 6 APPPATH/Controllers/Front.php(74): App\Controllers\BaseController->front_views()
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->blogDetalle()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController()
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest()
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter()
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb()

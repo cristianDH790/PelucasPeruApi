@@ -1,0 +1,1 @@
+import{W as e,kb as n}from"./chunk-YNMGZ5S5.js";var r=class t{_notificarEvento=new n;constructor(){}get notificarEvento(){return this._notificarEvento}static \u0275fac=function(o){return new(o||t)};static \u0275prov=e({token:t,factory:t.\u0275fac,providedIn:"root"})};export{r as a};

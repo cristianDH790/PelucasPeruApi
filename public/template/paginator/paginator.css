@@ -1,0 +1,78 @@
+.paginacion .justify-content-end {
+  justify-content: flex-end!important;
+}
+
+.paginacion .d-flex {
+  display: flex!important;
+}
+.paginacion{margin: 50px 0 15px;display: block;z-index: 10;text-align: center;}
+.pagination {
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  border-radius: 2px;
+  margin-top: 30px;
+}
+
+.paginacion dl,.paginacion ol,.paginacion p,.paginacion ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.paginacion .page-item.disabled .page-link {
+position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin: 0;
+    line-height: 30px;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+    height: 46px;
+    font-size: 16px;
+    width: 46px;
+    border-radius: 5px;
+}
+.paginacion .page-link:not(:disabled):not(.disabled) {
+  cursor: pointer;
+}
+.paginacion .page-link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin: 0px;
+  line-height: 30px;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid #000;
+  height: 46px;
+  font-size: 16px;
+  border-radius: 4px;
+  width: 46px;
+  border-radius: 5px;
+}
+.paginacion a {
+  color: #000!important;
+  font-weight: 600!important;
+}
+.paginacion a:hover {
+  color: #000 !important;
+  background: #fef0e3;
+}
+.paginacion .page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #000 !important;
+  border-color: #000 !important;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+.paginacion ul li{
+  display: inline-block;
+}
+.paginacion ul{
+  display: block;
+  margin-bottom: 0px;
+}
+
+.mostrar{display: inline-block;background: #fff;height: 40px;margin-right: 3px;padding: 7px 20px;border-radius: 4px;}
+#registros{height: 40px;padding: 5px 8px;border-radius: 4px;}

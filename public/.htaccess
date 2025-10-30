@@ -1,0 +1,54 @@
+Options -Indexes
+Options +FollowSymlinks
+RewriteEngine On
+RewriteBase /
+
+# ----------------------------------------------------------------------
+# Redirige la raíz del dominio a /peluca
+# ----------------------------------------------------------------------
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /(\?|$)
+RewriteRule ^$ peluca [R=301,L]
+
+# ----------------------------------------------------------------------
+# Redirige www a no-www (opcional)
+# ----------------------------------------------------------------------
+RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+# ----------------------------------------------------------------------
+# Elimina index.php de la URL y enruta todo a CodeIgniter
+# ----------------------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L,QSA]
+
+# ----------------------------------------------------------------------
+# Pasa header Authorization
+# ----------------------------------------------------------------------
+RewriteCond %{HTTP:Authorization} .
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+# ----------------------------------------------------------------------
+# Bloquea archivos sensibles
+# ----------------------------------------------------------------------
+<FilesMatch "^(\.env|\.git|\.htaccess|composer\.(json|lock)|package(-lock)?\.json|yarn\.lock|webpack\.config\.js)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+<FilesMatch "\.(bak|log|sql|swp|old|orig|tmp|save|gz|zip)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ----------------------------------------------------------------------
+# Si no hay mod_rewrite instalado
+# ----------------------------------------------------------------------
+<IfModule !mod_rewrite.c>
+    ErrorDocument 404 index.php
+</IfModule>
+
+# ----------------------------------------------------------------------
+# Deshabilita firma del servidor
+# ----------------------------------------------------------------------
+ServerSignature Off

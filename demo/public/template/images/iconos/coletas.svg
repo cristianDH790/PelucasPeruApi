@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 720 1280" style="enable-background:new 0 0 720 1280;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#F9BB9D;}
+	.st2{filter:url(#Adobe_OpacityMaskFilter);}
+	
+		.st3{clip-path:url(#SVGID_00000036935435551711885680000001373899833188681858_);mask:url(#_x36_b41646496_00000047750981149290434940000018292863047442902669_);}
+</style>
+<rect y="0" class="st0" width="720" height="1280"/>
+<rect y="0" class="st1" width="720" height="1280"/>
+<g>
+	<defs>
+		<rect id="SVGID_1_" x="-194.6" y="149" width="1163.1" height="1362.8"/>
+	</defs>
+	<clipPath id="SVGID_00000042008967277740679950000008310036672952259770_">
+		<use xlink:href="#SVGID_1_"  style="overflow:visible;"/>
+	</clipPath>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-194.6" y="-232.9" width="1163.1" height="1744.7">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	
+		<mask maskUnits="userSpaceOnUse" x="-194.6" y="-232.9" width="1163.1" height="1744.7" id="_x36_b41646496_00000047750981149290434940000018292863047442902669_">
+		<g class="st2">
+			
+				<g transform="matrix(1 0 0 1 0 -1.525879e-05)" style="clip-path:url(#SVGID_00000042008967277740679950000008310036672952259770_);enable-background:new    ;">
+				
+					<image style="overflow:visible;" width="2581" height="3873" xlink:href="691878A8.jpg"  transform="matrix(0.4506 0 0 0.4505 -194.624 -232.8836)">
+				</image>
+			</g>
+		</g>
+	</mask>
+	
+		<g transform="matrix(0.337984,0,0,0.337854,-145.968006,-174.662659)" style="clip-path:url(#SVGID_00000042008967277740679950000008310036672952259770_);mask:url(#_x36_b41646496_00000047750981149290434940000018292863047442902669_);">
+		<g transform="matrix(1 0 0 1 0 -1.525879e-05)" style="enable-background:new    ;">
+			
+				<image style="overflow:visible;" width="2581" height="3873" xlink:href="691878A9.png"  transform="matrix(1.3333 0 0 1.3333 -143.9595 -172.3256)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>

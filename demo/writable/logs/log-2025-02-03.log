@@ -1,0 +1,420 @@
+ERROR - 2025-02-03 03:28:53 --> mysqli_sql_exception: Unknown column 'nombre' in 'order clause' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticia...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticia...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticia...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticia...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+#7 /home/casalingenieros/public_html/app/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-03 03:28:53 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'order clause'
+[Method: POST, Route: NoticiaController/noticias]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 4 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 5 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:28:53 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 6 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 7 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:28:53 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 7 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 8 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-03 03:30:32 --> mysqli_sql_exception: Unknown column 'nombre' in 'order clause' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticia...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticia...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticia...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticia...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+#7 /home/casalingenieros/public_html/app/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-03 03:30:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'order clause'
+[Method: POST, Route: NoticiaController/noticias]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 4 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 5 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:30:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 6 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 7 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:30:32 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 7 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 8 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-03 03:31:09 --> mysqli_sql_exception: Unknown column 'nombre' in 'order clause' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticia...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticia...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticia...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticia...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+#7 /home/casalingenieros/public_html/app/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-03 03:31:09 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'order clause'
+[Method: POST, Route: NoticiaController/noticias]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 4 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 5 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:31:09 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'nombre' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 6 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 7 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:31:09 --> [Caused by] mysqli_sql_exception: Unknown column 'nombre' in 'order clause'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = 25
+ORDER BY `nombre` ASC
+ LIMIT 9')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `noticias`.*, (select e.nombre from estados e where noticias.idestado=e.idestado) as estado
+FROM `noticias`
+WHERE `noticias`.`idestado` = :noticias.idestado:
+ORDER BY `nombre` ASC
+ LIMIT 9', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(9, 0)
+ 7 APPPATH/Entities/Noticia.php(88): CodeIgniter\BaseModel->findAll(9, 0)
+ 8 APPPATH/Controllers/NoticiaController.php(27): App\Entities\Noticia::buscarPor('nombre_asc', 'asc', 'nombre', '', 25, 0, 9)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\NoticiaController->noticias()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\NoticiaController))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:34:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/noticiaDetalle.php"
+[Method: GET, Route: noticia-detalle]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/noticiaDetalle.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/noticiaDetalle', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/noticiaDetalle', [...])
+ 4 APPPATH/Controllers/Front.php(102): App\Controllers\BaseController->front_views('front/body/noticiaDetalle', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->noticiaDetalle()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 03:38:41 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "petrotal (1).jpg"
+[Method: GET, Route: archivos/proyecto/petrotal%20%281%29.jpg]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('archivos/proyecto/petrotal (1).jpg')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('archivos/proyecto/petrotal (1).jpg')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 17:44:44 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 19:03:45 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 19:03:57 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 19:09:06 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 23:10:21 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 23:10:22 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 23:37:13 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 23:37:14 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 23:37:16 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-03 23:59:41 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

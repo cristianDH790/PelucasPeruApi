@@ -1,0 +1,70 @@
+INFO - 2025-08-05 14:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:30:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:41:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:42:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:43:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:44:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:46:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:46:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:48:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:50:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:50:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:55:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:56:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:57:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 15:59:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 16:07:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 16:09:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 16:55:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 16:57:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 16:57:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2025-08-05 17:08:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-08-05 17:30:44 --> ErrorException: Undefined variable $bienvenidos
+[Method: GET, Route: /]
+in APPPATH/Views/front/body/inicio.php on line 29.
+ 1 APPPATH/Views/front/body/inicio.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bienvenidos', '/home/ironplastcom/public_html/demo/app/Views/front/body/inicio.php', 29)
+ 2 SYSTEMPATH/View/View.php(234): include('/home/ironplastcom/public_html/demo/app/Views/front/body/inicio.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/inicio', [], true)
+ 5 APPPATH/Controllers/BaseController.php(65): view('front/body/inicio', [...])
+ 6 APPPATH/Controllers/Front.php(32): App\Controllers\BaseController->front_views('front/body/inicio', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-05 17:30:52 --> ErrorException: Undefined variable $bienvenidos
+[Method: GET, Route: /]
+in APPPATH/Views/front/body/inicio.php on line 29.
+ 1 APPPATH/Views/front/body/inicio.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $bienvenidos', '/home/ironplastcom/public_html/demo/app/Views/front/body/inicio.php', 29)
+ 2 SYSTEMPATH/View/View.php(234): include('/home/ironplastcom/public_html/demo/app/Views/front/body/inicio.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/inicio', [], true)
+ 5 APPPATH/Controllers/BaseController.php(65): view('front/body/inicio', [...])
+ 6 APPPATH/Controllers/Front.php(32): App\Controllers\BaseController->front_views('front/body/inicio', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-08-05 17:31:02 --> ErrorException: Undefined variable $servicios
+[Method: GET, Route: /]
+in APPPATH/Views/front/body/inicio.php on line 75.
+ 1 APPPATH/Views/front/body/inicio.php(75): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $servicios', '/home/ironplastcom/public_html/demo/app/Views/front/body/inicio.php', 75)
+ 2 SYSTEMPATH/View/View.php(234): include('/home/ironplastcom/public_html/demo/app/Views/front/body/inicio.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/inicio', [], true)
+ 5 APPPATH/Controllers/BaseController.php(65): view('front/body/inicio', [...])
+ 6 APPPATH/Controllers/Front.php(32): App\Controllers\BaseController->front_views('front/body/inicio', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

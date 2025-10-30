@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 720 1280" style="enable-background:new 0 0 720 1280;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFFFFF;}
+	.st1{fill:#F9BB9D;}
+	.st2{filter:url(#Adobe_OpacityMaskFilter);}
+	.st3{mask:url(#_x36_9c26e61ce_00000049209210700172747580000004563377579611164830_);}
+</style>
+<g>
+	<rect y="0" class="st0" width="720" height="1280"/>
+	<rect y="0" class="st1" width="720" height="1280"/>
+	<defs>
+		<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="-168.4" y="-239.9" width="1000.7" height="1778.6">
+			<feColorMatrix  type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0"/>
+		</filter>
+	</defs>
+	
+		<mask maskUnits="userSpaceOnUse" x="-168.4" y="-239.9" width="1000.7" height="1778.6" id="_x36_9c26e61ce_00000049209210700172747580000004563377579611164830_">
+		<g transform="matrix(1,0,0,1,-0.000000000000028422,0)" class="st2">
+			
+				<image style="overflow:visible;enable-background:new    ;" width="1152" height="2048" xlink:href="AF64422D.jpg"  transform="matrix(0.8686 0 0 0.8684 -168.4197 -239.9387)">
+			</image>
+		</g>
+	</mask>
+	<g transform="matrix(0.651484,0,0,0.651325,-137.36955,-179.954034)" class="st3">
+		<g style="enable-background:new    ;">
+			
+				<image style="overflow:visible;" width="1152" height="2048" xlink:href="AF64422F.jpg"  transform="matrix(1.3333 0 0 1.3333 -47.6607 -92.0964)">
+			</image>
+		</g>
+	</g>
+</g>
+</svg>

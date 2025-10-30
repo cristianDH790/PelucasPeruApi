@@ -1,0 +1,1005 @@
+ERROR - 2025-02-01 04:14:45 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(187): mysqli->real_connect('casalingenieros...', 'casalingenieros...', 'uJG+Q_Flv[g0', 'casalingenieros...', 5432, '', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#3 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#6 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#7 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-01 04:14:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:15:05 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(187): mysqli->real_connect('casalingenieros...', 'casalingenieros...', 'uJG+Q_Flv[g0', 'casalingenieros...', 5432, '', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#3 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#6 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#7 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-01 04:15:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:15:20 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(187): mysqli->real_connect('casalingenieros...', 'casalingenieros...', 'uJG+Q_Flv[g0', 'casalingenieros...', 5432, '', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#3 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#6 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#7 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-01 04:15:20 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:15:22 --> Error connecting to the database: mysqli_sql_exception: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:187
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(187): mysqli->real_connect('casalingenieros...', 'casalingenieros...', 'uJG+Q_Flv[g0', 'casalingenieros...', 5432, '', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Connection refused in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/BaseConnection.php(421): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#3 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#6 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#7 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#11 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-02-01 04:15:22 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Connection refused
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 467.
+ 1 SYSTEMPATH/Database/BaseConnection.php(616): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 3 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 6 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:16:10 --> mysqli_sql_exception: Table 'casalingenieros_casal.slider' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 04:16:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.slider' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.slider' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:10 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.slider' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `slider`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:16:32 --> mysqli_sql_exception: Table 'casalingenieros_casal.estado' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 04:16:32 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.estado' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:32 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.estado' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:32 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.estado' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estado e where slider.idestado=e.idestado) as estado, (select p.nombre from parametro p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:16:55 --> mysqli_sql_exception: Unknown table 'slider' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 04:16:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:55 --> [Caused by] mysqli_sql_exception: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:16:57 --> mysqli_sql_exception: Unknown table 'slider' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 04:16:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:16:57 --> [Caused by] mysqli_sql_exception: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where slider.idestado=e.idestado) as estado, (select p.nombre from parametros p where slider.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:17:13 --> mysqli_sql_exception: Unknown table 'slider' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 04:17:13 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:17:13 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:17:13 --> [Caused by] mysqli_sql_exception: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `slider`.`idestado` = :slider.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 04:17:27 --> mysqli_sql_exception: Unknown table 'slider' in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 04:17:27 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = :sliders.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:17:27 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = :sliders.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:17:27 --> [Caused by] mysqli_sql_exception: Unknown table 'slider'
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = 23
+ORDER BY `orden` ASC', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = 23
+ORDER BY `orden` ASC')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `slider`.*, (select e.nombre from estados e where sliders.idestado=e.idestado) as estado, (select p.nombre from parametros p where sliders.idpcategoria=p.idparametro) as pcategoria
+FROM `sliders`
+WHERE `sliders`.`idestado` = :sliders.idestado:
+ORDER BY `orden` ASC', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Slider.php(72): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(17): App\Entities\Slider::buscarPor('orden', 'asc', '', '', 23, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 04:47:52 --> ErrorException: Undefined variable $servicios
+[Method: GET, Route: /]
+in APPPATH/Views/front/body/inicio.php on line 58.
+ 1 APPPATH/Views/front/body/inicio.php(58): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $servicios', '/home/casalingenieros/public_html/app/Views/front/body/inicio.php', 58)
+ 2 SYSTEMPATH/View/View.php(234): include('/home/casalingenieros/public_html/app/Views/front/body/inicio.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/inicio', [], true)
+ 5 APPPATH/Controllers/BaseController.php(65): view('front/body/inicio', [...])
+ 6 APPPATH/Controllers/Front.php(24): App\Controllers\BaseController->front_views('front/body/inicio', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 05:12:10 --> mysqli_sql_exception: Table 'casalingenieros_casal.estado' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `proyect...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyect...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyect...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyect...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Proyecto.php(95): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(22): App\Entities\Proyecto::buscarPor('orden', 'asc', '', '', 21, 0, 0, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 05:12:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.estado' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Proyecto.php(95): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(22): App\Entities\Proyecto::buscarPor('orden', 'asc', '', '', 21, 0, 0, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:12:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.estado' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = 21')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = 21')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Proyecto.php(95): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(22): App\Entities\Proyecto::buscarPor('orden', 'asc', '', '', 21, 0, 0, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:12:10 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.estado' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = 21', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = 21')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = 21')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `proyectos`.*, (select e.nombre from estado e where proyectos.idestado=e.idestado) as estado
+FROM `proyectos`
+WHERE `proyectos`.`idestado` = :proyectos.idestado:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Proyecto.php(95): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(22): App\Entities\Proyecto::buscarPor('orden', 'asc', '', '', 21, 0, 0, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:26:14 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(85): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:26:34 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(85): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-01 05:27:36 --> mysqli_sql_exception: Table 'casalingenieros_casal.cientes' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `cliente...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `cliente...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `cliente...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `cliente...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Cliente.php(65): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(24): App\Entities\Cliente::buscarPor('orden', 'asc', '', '', 9, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->inicio()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-01 05:27:36 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.cientes' doesn't exist
+[Method: GET, Route: /]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = :clientes.idestado:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Cliente.php(65): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(24): App\Entities\Cliente::buscarPor('orden', 'asc', '', '', 9, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:27:36 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.cientes' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = 9')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = 9')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = :clientes.idestado:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Cliente.php(65): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(24): App\Entities\Cliente::buscarPor('orden', 'asc', '', '', 9, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:27:36 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.cientes' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = 9', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = 9')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = 9')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `clientes`.*, (select e.nombre from estados e where clientes.idestado=e.idestado) as estado
+FROM `cientes`
+WHERE `clientes`.`idestado` = :clientes.idestado:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Cliente.php(65): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(24): App\Entities\Cliente::buscarPor('orden', 'asc', '', '', 9, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 05:29:45 --> ErrorException: Undefined variable $clientes
+[Method: GET, Route: /]
+in APPPATH/Views/front/body/inicio.php on line 150.
+ 1 APPPATH/Views/front/body/inicio.php(150): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $clientes', '/home/casalingenieros/public_html/app/Views/front/body/inicio.php', 150)
+ 2 SYSTEMPATH/View/View.php(234): include('/home/casalingenieros/public_html/app/Views/front/body/inicio.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/inicio', [], true)
+ 5 APPPATH/Controllers/BaseController.php(65): view('front/body/inicio', [...])
+ 6 APPPATH/Controllers/Front.php(31): App\Controllers\BaseController->front_views('front/body/inicio', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->inicio()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 07:19:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(93): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 11:19:53 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(93): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 16:39:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(93): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 21:32:42 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(104): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-01 21:32:43 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(104): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

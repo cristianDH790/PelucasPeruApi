@@ -1,0 +1,39 @@
+CRITICAL - 2025-01-30 02:29:35 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/productos.php"
+[Method: GET, Route: productos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/productos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/productos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/productos', [...])
+ 4 APPPATH/Controllers/Front.php(53): App\Controllers\BaseController->front_views('front/body/productos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->productos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-30 10:27:16 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(81): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-01-30 10:55:36 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/noticias.php"
+[Method: GET, Route: noticias]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/noticias.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/noticias', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/noticias', [...])
+ 4 APPPATH/Controllers/Front.php(67): App\Controllers\BaseController->front_views('front/body/noticias', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->noticias()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

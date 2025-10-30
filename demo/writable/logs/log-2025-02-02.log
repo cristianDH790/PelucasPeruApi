@@ -1,0 +1,525 @@
+CRITICAL - 2025-02-02 00:40:44 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 04:49:50 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(104): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 10:59:34 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-02 17:15:31 --> mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `paramet...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `paramet...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `paramet...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `paramet...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-02 17:15:31 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+[Method: GET, Route: proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:15:31 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:15:31 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-02 17:15:52 --> mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `paramet...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `paramet...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `paramet...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `paramet...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-02 17:15:52 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+[Method: GET, Route: proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:15:52 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:15:52 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-02 17:15:55 --> mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `paramet...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `paramet...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `paramet...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `paramet...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-02 17:15:55 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+[Method: GET, Route: proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:15:55 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:15:55 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-02 17:16:15 --> mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `paramet...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `paramet...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `paramet...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `paramet...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-02 17:16:15 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+[Method: GET, Route: proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:16:15 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:16:15 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-02-02 17:17:10 --> mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist in /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php:312
+Stack trace:
+#0 /home/casalingenieros/public_html/system/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `paramet...', 0)
+#1 /home/casalingenieros/public_html/system/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `paramet...')
+#2 /home/casalingenieros/public_html/system/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `paramet...')
+#3 /home/casalingenieros/public_html/system/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `paramet...', Array, false)
+#4 /home/casalingenieros/public_html/system/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/casalingenieros/public_html/system/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 /home/casalingenieros/public_html/app/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+#7 /home/casalingenieros/public_html/app/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+#8 /home/casalingenieros/public_html/system/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+#9 /home/casalingenieros/public_html/system/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+#10 /home/casalingenieros/public_html/system/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 /home/casalingenieros/public_html/system/Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 /home/casalingenieros/public_html/system/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 /home/casalingenieros/public_html/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-02-02 17:17:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+[Method: GET, Route: proyectos]
+in SYSTEMPATH/Database/BaseConnection.php on line 688.
+ 1 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 2 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:17:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 317.
+ 1 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 2 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 4 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 8 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 9 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+10 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:17:10 --> [Caused by] mysqli_sql_exception: Table 'casalingenieros_casal.parametro' doesn't exist
+in SYSTEMPATH/Database/MySQLi/Connection.php on line 312.
+ 1 SYSTEMPATH/Database/MySQLi/Connection.php(312): mysqli->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5', 0)
+ 2 SYSTEMPATH/Database/BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 3 SYSTEMPATH/Database/BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = 7
+AND `parametro`.`idtipo` = 5')
+ 4 SYSTEMPATH/Database/BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `parametro`.*
+FROM `parametro`
+WHERE `parametro`.`idestado` = :parametro.idestado:
+AND `parametro`.`idtipo` = :parametro.idtipo:', [...], false)
+ 5 SYSTEMPATH/Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH/BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH/Entities/Parametro.php(75): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH/Controllers/Front.php(84): App\Entities\Parametro::buscarPor('', '', '', '', 7, 5, 0, 0)
+ 9 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+10 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+11 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 17:45:31 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 19:41:20 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 20:17:28 --> CodeIgniter\HTTP\Exceptions\BadRequestException: The URI you submitted has disallowed characters: "control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter"
+[Method: GET, Route: producto/control-de-ruido-%28acustica%29-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter]
+in SYSTEMPATH/Router/Router.php on line 737.
+ 1 SYSTEMPATH/Router/Router.php(204): CodeIgniter\Router\Router->checkDisallowedChars('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 2 SYSTEMPATH/CodeIgniter.php(834): CodeIgniter\Router\Router->handle('producto/control-de-ruido-(acustica)-con-grupos-electrogenos,-encapsulados,-en-contenedor,-shelter')
+ 3 SYSTEMPATH/CodeIgniter.php(457): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+ 4 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 20:17:29 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-02-02 20:17:32 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "front/body/contactenos.php"
+[Method: GET, Route: contactenos]
+in SYSTEMPATH/Exceptions/FrameworkException.php on line 41.
+ 1 SYSTEMPATH/View/View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('front/body/contactenos.php')
+ 2 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/contactenos', [], true)
+ 3 APPPATH/Controllers/BaseController.php(65): view('front/body/contactenos', [...])
+ 4 APPPATH/Controllers/Front.php(109): App\Controllers\BaseController->front_views('front/body/contactenos', [...])
+ 5 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->contactenos()
+ 6 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 7 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))

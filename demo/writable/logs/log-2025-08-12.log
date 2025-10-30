@@ -1,0 +1,15 @@
+CRITICAL - 2025-08-12 21:02:24 --> ErrorException: Undefined variable $pcategorias
+[Method: GET, Route: proyectos]
+in APPPATH/Views/front/body/proyectos.php on line 45.
+ 1 APPPATH/Views/front/body/proyectos.php(45): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $pcategorias', '/home/ironplastcom/public_html/demo/app/Views/front/body/proyectos.php', 45)
+ 2 SYSTEMPATH/View/View.php(234): include('/home/ironplastcom/public_html/demo/app/Views/front/body/proyectos.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1169): CodeIgniter\View\View->render('front/body/proyectos', [], true)
+ 5 APPPATH/Controllers/BaseController.php(65): view('front/body/proyectos', [...])
+ 6 APPPATH/Controllers/Front.php(81): App\Controllers\BaseController->front_views('front/body/proyectos', [...])
+ 7 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Front->proyectos()
+ 8 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Front))
+ 9 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
