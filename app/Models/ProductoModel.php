@@ -240,8 +240,8 @@ class ProductoModel extends Model
         if ($idcupon > 0) {
             $builder->join('productoimagen pi_cupon', 'pi_cupon.idproducto = p.idproducto', 'left');
             $builder->join(
-                'productoimagen_cupon pcupon',
-                'pcupon.idproductoimagen = pi_cupon.idproductoimagen',
+                'producto_cupon pcupon',
+                'pcupon.idproducto = pi_cupon.idproducto',
                 'inner'
             );
             $builder->where('pcupon.idcupon', $idcupon);
@@ -320,8 +320,8 @@ class ProductoModel extends Model
         if ($idcupon > 0) {
             $builder->join('productoimagen pi', 'pi.idproducto = p.idproducto', 'left');
             $builder->join(
-                'productoimagen_cupon pcupon',
-                'pcupon.idproductoimagen = pi.idproductoimagen',
+                'producto_cupon pcupon',
+                'pcupon.idproducto = pi.idproducto',
                 'inner'
             );
             $builder->where('pcupon.idcupon', $idcupon);

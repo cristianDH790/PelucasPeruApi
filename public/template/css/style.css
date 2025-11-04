@@ -39,11 +39,12 @@ header{position: relative;display: block;padding:10px 0px;z-index: 9;}
 .header-menu .usuario li a{color: #000;}
 .header-menu .usuario li a .bg-danger{background: #934d1f !important;color: #fff;}
 .header-menu .usuario .sesion{margin-right: 10px;}
-.header-menu .usuario .sesion .dropdown-menu{position: absolute;top: 90%;left: -80px;z-index: 1000;display: none;float: left;min-width: 140px;padding: 0.5rem 0;margin: 0.125rem 0 0;font-size: 1rem;color: #728eaa;text-align: left;list-style: none;background-color: #ffffff;background-clip: padding-box;box-shadow: 0 0 5px #ccc;border-radius: 10px;border: none;}
+.header-menu .usuario .sesion .dropdown-menu{position: absolute;top: 90%;left: -80px;z-index: 1000;display: none;float: left;min-width: 200px;padding: 0.5rem 0;margin: 0.125rem 0 0;font-size: 1rem;color: #728eaa;text-align: left;list-style: none;background-color: #ffffff;background-clip: padding-box;box-shadow: 0 0 5px #ccc;border-radius: 10px;border: none;}
 .header-menu .usuario .sesion:hover .dropdown-menu {display: block;padding: 0;}
 .header-menu .usuario .sesion .dropdown-menu li {position: relative;display: block;}
 .header-menu .usuario .sesion .dropdown-menu li a {padding: 5px 15px !important;display: block;margin: 0 !important;background: #fff;border: 1px solid #ccc !important;border-bottom: none !important;color: #000 !important;font-size: 14px !important;text-transform: inherit;font-weight: 600 !important;}
 .header-menu .usuario .sesion .dropdown-menu li a:hover{background: #000 !important;color: #fff !important;}
+.header-menu .usuario .sesion .dropdown-menu li h5{font-size: 14px;color: #000;padding: 10px 15px;display: block;}
 
 .offcanvas-start .offcanvas-header{background: #000;}
 .offcanvas-start .offcanvas-header img{display: block;width: 180px;}
@@ -71,7 +72,7 @@ header{position: relative;display: block;padding:10px 0px;z-index: 9;}
 .categorias-home .cate-img img{display: block;width: 100%;border-radius: 20px;transform: scale(1);transition: all ease 1s;}
 .categorias-home .cate-img img:hover{transform: scale(1.1);transition: all ease 1s;}
 .categorias-home .cate-img h4{position: absolute;top: 15px;width: 100%;display: block;text-align: center;font-weight: 700;color: #572a15;}
-.categorias-home .cate-img .comprar{position: absolute;bottom: 15px;width: 150px;display: block;text-align: center;background: #000000;border-radius: 50px;color: #fff;left: 60px;}
+.categorias-home .cate-img .comprar{position: absolute;bottom: 15px;width: 150px;display: block;text-align: center;background: #000000;border-radius: 50px;color: #fff;left: 27%;}
 .categorias-home .cate-img:hover .comprar{background: #b33c01;}
 
 .pelu-unicas img{display: block;width: 100%;border-radius: 20px;}
@@ -906,8 +907,11 @@ margin-bottom: 25px;}
 #feedbackForm input{display: block;width: 100%;margin-bottom: 20px;padding: 7px 15px;border: 1px solid #e1e1e1;border-radius: 7px;font-size: 14px;}
 #feedbackForm textarea{display: block;width: 100%;margin-bottom: 20px;padding: 7px 15px;border: 1px solid #e1e1e1;border-radius: 7px;}
 #feedbackForm #captchaCode{display: block;width: 100%;background: #e0d2c1;padding: 10px;border-radius: 7px;color: #934d1f;font-weight: 600;margin-bottom: 15px;}
-#feedbackForm button{display: block;text-align: center;margin: 0 auto 20px;background: #934d1f;padding: 5px 35px;border: none;border-radius: 7px;color: #fff;font-weight: 600;}
-#feedbackForm button:hover{background: #693512;color: #fff;}
+#feedbackForm img{display: inline-block;}
+#feedbackForm #refres{display: inline-block;text-align: center;margin: 0 auto 20px;background: #934d1f;padding: 5px 35px;border: none;border-radius: 7px;color: #fff;font-weight: 600;}
+#feedbackForm #refres:hover{background: #693512;color: #fff;}
+#feedbackForm .btn-enviar{display: inline-block;text-align: center;margin: 0 auto 20px;background: #934d1f;padding: 5px 35px;border: none;border-radius: 7px;color: #fff;font-weight: 600;}
+#feedbackForm .btn-enviar:hover{background: #693512;color: #fff;}
 
 .productos-int #lentes .bg-image {border-radius: 15px 15px 0 0;position: relative;overflow: hidden;border: 2px solid #e0d2c1;border-bottom: none;}
 .productos-int #lentes .bg-image span {position: absolute;content: '';border-radius: 50%;background: #000;color: #fff;top: 10px;left: 10px;width: 40px;height: 40px;text-align: center;line-height: 40px;font-weight: 600;z-index: 99;}
@@ -1011,6 +1015,7 @@ margin-bottom: 25px;}
     font-weight: 500;
     background: #000;
 }
+
 #container-productos .resultados p{display: block;padding: 15px;border-radius: 10px;text-align: center;background: #e0d2c1;}
 
 .bloque-cuenta {
@@ -2114,3 +2119,125 @@ margin-bottom: 25px;}
     color: #fff;
     border-radius: 0 5px 5px 0;
 }
+
+#modalSesionCarrito .modal-header {
+    border-bottom: none;
+    background: #934d1f;
+    padding: var(--bs-modal-header-padding);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#modalSesionCarrito .modal-header .btn-close {
+    cursor: pointer;
+    float: right;
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 27px;
+    font-size: 12px;
+}
+
+#modalSesionCarrito .modal-header .btn-close:hover {
+    background-color: #fff;
+    color: #fff;
+}
+
+#modalSesionCarrito .modal-body {
+    padding: 30px;
+    background: #f1f1f1;
+}
+
+#modalSesionCarrito .modal-body h4 {
+    display: block;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+#modalSesionCarrito .modal-body .form-group {
+    display: block;
+    margin-bottom: 15px;
+}
+
+#modalSesionCarrito .modal-body input {
+    display: block;
+    width: 100%;
+    background: #fff;
+    border-radius: 5px;
+}
+
+#modalSesionCarrito .modal-body button {
+    display: inline-block;
+    background: #934d1f;
+    color: #fff;
+    padding: 8px 40px;
+    margin: 20px 0 0 0;
+    border-radius: 7px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
+
+#modalSesionCarrito .modal-body button:hover {
+    background: #2f2f2f;
+    color: #fff;
+}
+
+#modalSesionCarrito .modal-body .registrarme {
+    color: #fff;
+    font-weight: 500;
+    background: #777;
+    text-transform: none;
+}
+
+#modalSesionCarrito .modal-body .registrarme:hover {
+    color: #fff;
+    font-weight: 500;
+    background: #000;
+}
+
+
+
+
+
+
+#modalpago .modal-header {
+    border-bottom: none;
+    background: #934d1f;
+    padding: var(--bs-modal-header-padding);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+#modalpago .modal-header .btn-close {
+    cursor: pointer;
+    float: right;
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 27px;
+    font-size: 12px;
+}
+
+#modalpago .modal-header .btn-close:hover {
+    background-color: #fff;
+    color: #fff;
+}
+
+#modalpago .modal-body {
+    padding: 30px;
+    background: #f1f1f1;
+}
+#modalPago .modal-dialog{width: 350px !important;}
+.kr-embedded .kr-payment-button, .kr-smart-form .kr-payment-button{background: #934d1f !important;color: #000 !important;text-align: center !important;}
+.kr-embedded .kr-payment-button:hover, .kr-smart-form .kr-payment-button:hover{background: #000 !important;color: #fff !important;}
+#listaComentarios p{display: block;padding: 20px;border-radius: 10px;text-align: center;margin-bottom: 20px;background: #efe3d5;}

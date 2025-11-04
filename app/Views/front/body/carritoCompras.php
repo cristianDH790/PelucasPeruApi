@@ -275,7 +275,7 @@
 												<label>Agencia más cercana *</label>
 												<div class="input-group">
 													<input id="adireccion" name="adireccion" class="form-control" placeholder="Ingresa tu dirección">
-													<a href="https://agencias.shalom.pe/" target="_blank" class="btn btn-outline-primary" id="btnUbicacion" title="buscar ubicación">
+													<a href="#" target="_blank" class="btn btn-outline-primary" id="btnUbicacion" title="buscar ubicación">
 														<i class="fas fa-map-marker-alt"></i>
 													</a>
 												</div>
@@ -1454,7 +1454,7 @@
 				productos.push(`
                 <div class="row">
                     <div class="col-md-3 col-sm-12">
-                        <a target="_blank" href="#">
+                        <a target="_blank" href="${BASE_URL}producto/${item.urlAmigable}">
                             <img src="${BASE_URL}archivos/productoimagen/${item.urlImagen}" alt="${item.nombre}">
                         </a>
                     </div>
@@ -1499,8 +1499,19 @@
 
 		// Aplicar el porcentaje de comisión del método de pago
 		if (COMISION_FORMAPAGO > 0) {
-			TOTAL = TOTAL + (TOTAL * (COMISION_FORMAPAGO / 100));
+			COMISION_TOTAL = TOTAL * (COMISION_FORMAPAGO / 100); // monto de la comisión
+			TOTAL = TOTAL + COMISION_TOTAL; // total con comisión
+		} else {
+			COMISION_TOTAL = 0; // si no hay comisión
 		}
+
+		// Redondeamos a 2 decimales para mostrar
+		COMISION_TOTAL = parseFloat(COMISION_TOTAL.toFixed(2));
+		TOTAL = parseFloat(TOTAL.toFixed(2));
+
+		console.log("Comisión total: ", COMISION_TOTAL);
+		console.log("Total final: ", TOTAL);
+
 
 		document.getElementById("productos").innerHTML = productosHTML;
 		// Asignar valores al DOM sin jQuery
@@ -2842,6 +2853,107 @@
 	// 	}
 	// }
 
+
+
+	function validarCupon() {
+		$(".carga").show();
+
+		const codigo = document.getElementById("cupon").value;
+
+		$.ajax({
+			url: `${BASE_URL}api/CuponController/validarCupon`,
+			type: "post",
+			data: {
+				codigo
+			},
+			dataType: 'json',
+		}).done(function(response) {
+			removerClases();
+
+			if (response.status === 'error') {
+				$('#cupon').val('');
+				return showErrores(response.errors);
+			}
+
+			const {
+				cupon,
+				productos
+			} = response;
+			let totalDescuento = 0;
+			const descuentoProductos = [];
+			let aplicable = false;
+
+			// Recorrer el carrito desde localStorage
+			for (let i = 0; i < localStorage.length; i++) {
+				const key = localStorage.key(i);
+				if (key.includes('Pelucas-Producto')) {
+					const producto = JSON.parse(localStorage.getItem(key));
+					const idProductoCarrito = producto.idProducto; // ahora usamos idproducto directamente
+
+					// Verificar si el producto está en la lista de productos aplicables al cupón
+					const item = productos.find(p => Number(p.idproducto) === Number(idProductoCarrito));
+
+					if (item) {
+						aplicable = true;
+						const cantidadAplicable = Math.min(parseInt(producto.cantidad), parseInt(cupon.limite));
+						const precio = parseFloat(producto.precioVenta) || 0;
+						const descuentoPorcentaje = parseFloat(cupon.descuento) || 0;
+						const descuento = precio * (descuentoPorcentaje / 100) * cantidadAplicable;
+
+						totalDescuento += descuento;
+						descuentoProductos.push(descuento.toFixed(2));
+					} else {
+						descuentoProductos.push('0.00');
+					}
+				}
+			}
+
+			if (!aplicable) {
+				$('#cupon').val('');
+				$("#cupon").addClass("is-invalid");
+				$(".validacupon").addClass("invalid-feedback");
+				$(".validacupon").html("No aplica a ningún producto seleccionado.");
+				$(".validacupon").css("display", "block");
+
+				Swal.fire({
+					title: 'Cupón de descuento!',
+					text: "El cupón ingresado no aplica para ningún producto seleccionado.",
+					icon: 'warning',
+					confirmButtonColor: '#3085d6',
+					confirmButtonText: 'Continuar'
+				}).then(() => {
+					$('html, body').animate({
+						scrollTop: 0
+					}, 'slow');
+				});
+
+			} else {
+				$('#cupon').attr("readonly", "readonly");
+				$('#limpiaCupon').removeAttr("disabled");
+				DESCUENTO = totalDescuento;
+				$('#descuentoProductos').val(descuentoProductos);
+
+				Swal.fire({
+					title: 'Cupón de descuento!',
+					text: "El cupón ha sido aplicado exitosamente.",
+					icon: 'success',
+					confirmButtonColor: '#3085d6',
+					confirmButtonText: 'Continuar'
+				});
+			}
+
+			showProductosCarrito();
+		});
+	}
+
+
+	function limpiarCupon() {
+		$(".carga").show();
+		$("#cupon").val("");
+		DESCUENTO = 0.00
+		$("#cupon").removeAttr("readonly");
+		showProductosCarrito();
+	}
 
 	async function procesarPago() {
 		try {

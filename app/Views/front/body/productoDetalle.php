@@ -255,7 +255,7 @@
 									<button type="submit">Enviar</button>
 
 								</div> -->
-								<button type="submit">Enviar</button>
+								<button type="submit" class="btn-enviar">Enviar</button>
 							</div>
 						<? else : ?>
 							<textarea disabled placeholder="Inicie sesión para comentar" name="contenido" id="contenido" cols="30" rows="5"></textarea>
