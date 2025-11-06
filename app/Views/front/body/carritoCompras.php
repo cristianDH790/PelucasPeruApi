@@ -729,7 +729,7 @@
 				const valor = e.target.checked;
 
 				if (valor === true) {
-					document.getElementById("bnombres").value = (USUARIO_LOGIN.nombres + ' ' + USUARIO_LOGIN.pApellido + ' ' + (USUARIO_LOGIN.sApellido ?? "")).trim();
+					document.getElementById("bnombres").value = (USUARIO_LOGIN.nombres + ' ' + USUARIO_LOGIN.papellido + ' ' + (USUARIO_LOGIN.sapellido ?? "")).trim();
 					document.getElementById("bdocumento").value = USUARIO_LOGIN.documento;
 					document.getElementById("container-checkcomprobanteboleta").style.display = "none";
 				} else {
@@ -743,7 +743,7 @@
 
 				if (valor === true) {
 					document.getElementById("anombres").value = USUARIO_LOGIN.nombres;
-					document.getElementById("aapellidos").value = (USUARIO_LOGIN.pApellido + ' ' + (USUARIO_LOGIN.sApellido ?? "")).trim();
+					document.getElementById("aapellidos").value = (USUARIO_LOGIN.papellido + ' ' + (USUARIO_LOGIN.sapellido ?? "")).trim();
 					document.getElementById("adocumento").value = USUARIO_LOGIN.documento;
 					document.getElementById("atelefono").value = USUARIO_LOGIN.telefono;
 					document.getElementById("container-checkagencia").style.display = "none";

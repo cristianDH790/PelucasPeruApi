@@ -9,47 +9,6 @@ use App\Models\ValoracionModel;
 class ValoracionController extends BaseController
 {
 
-    // public function valorarPublicacion()
-    // {
-    //     $json = $this->request->getJSON(true); // <- true para obtener array asociativo
-
-    //     $idUsuario = $json["idUsuario"] ?? null;
-    //     $idproducto = $json["idProducto"] ?? null;
-    //     $valor = $json["valoracion"] ?? null;
-
-    //     // Debug
-    //     // var_dump($json, $idproducto); die();
-
-    //     $val = new ValoracionModel();
-
-    //     // Buscar si ya existe una valoración
-    //     $valoracion = $val->buscarPor("", "", "", "", 425, 341, $idUsuario, 0, $idproducto, 0, 0);
-    //     log_message('info', '🔍 Valoración encontrada: ' . json_encode($valoracion));
-
-    //     if ($valoracion && count($valoracion) > 0) {
-    //         $data = [
-    //             "status" => "error",
-    //             "mensaje" => "Ya ha valorado esta publicación"
-    //         ];
-    //     } else {
-    //         $datos = [
-    //             'idestado' => 425,
-    //             'idrvaloracion' => null,
-    //             'idclase' => 341,
-    //             'idreferencia' => $idproducto,
-    //             'idusuario' => $idUsuario,
-    //             'valor' => $valor,
-    //         ];
-
-    //         $idvaloracion = $val->guardar($datos);
-
-    //         $data = [
-    //             "status" => "exito"
-    //         ];
-    //     }
-
-    //     return $this->response->setJSON($data);
-    // }
     public function valorarPublicacion()
     {
         $json = $this->request->getJSON(true);
@@ -98,5 +57,42 @@ class ValoracionController extends BaseController
         }
 
         return $this->response->setJSON($data);
+    }
+
+    // ✅ Obtener resumen de valoraciones por idreferencia
+    public function resumen($idreferencia = null)
+    {
+        if ($idreferencia === null) {
+            return $this->fail('Debe especificar un idreferencia.');
+        }
+
+        $model = new ValoracionModel();
+        $data = $model->obtenerResumenValoraciones($idreferencia);
+
+        return $this->response->setJSON($data);
+    }
+
+
+    public function obtenerValoracionUsuario()
+    {
+        $json = $this->request->getJSON(true);
+        $idProducto = $json['idProducto'] ?? 0;
+        $idUsuario = $json['idUsuario'] ?? 0;
+        $ValoracionModel = new ValoracionModel();
+        $valoracion = $ValoracionModel
+            ->where('idreferencia', $idProducto)
+            ->where('idusuario', $idUsuario)
+            ->first();
+
+        if ($valoracion) {
+            return $this->response->setJSON([
+                'status' => 'exito',
+                'valoracion' => $valoracion['valor'] // 👈 asegúrate que el campo se llame 'valor' o 'valoracion' según tu tabla
+            ]);
+        } else {
+            return $this->response->setJSON([
+                'status' => 'sin_valoracion'
+            ]);
+        }
     }
 }

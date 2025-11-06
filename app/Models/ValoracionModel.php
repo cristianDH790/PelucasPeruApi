@@ -76,4 +76,45 @@ class ValoracionModel extends Model
 
         return $builder->get()->getResult();
     }
+
+
+    public function obtenerResumenValoraciones($idreferencia)
+    {
+        $db = \Config\Database::connect();
+
+        // Consulta para agrupar los votos por número de estrellas
+        $query = $db->table($this->table)
+            ->select('valor, COUNT(*) as total')
+            ->where('idreferencia', $idreferencia)
+            ->groupBy('valor')
+            ->get();
+
+        // Inicializamos todas las estrellas con 0
+        $result = [
+            5 => 0,
+            4 => 0,
+            3 => 0,
+            2 => 0,
+            1 => 0
+        ];
+
+        foreach ($query->getResult() as $row) {
+            $result[$row->valor] = (int) $row->total;
+        }
+
+        // Calcular promedio general
+        $promedioQuery = $db->table($this->table)
+            ->selectAvg('valor', 'promedio')
+            ->where('idreferencia', $idreferencia)
+            ->get()
+            ->getRow();
+
+        $average = round($promedioQuery->promedio ?? 0, 1);
+
+        // Devolvemos el arreglo completo
+        return [
+            'ratings' => $result,
+            'average' => $average
+        ];
+    }
 }

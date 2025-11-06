@@ -48,6 +48,9 @@ $routes->group('', ['filter' => 'cors'], static function (RouteCollection $route
         $routes->get('pass', 'Api\\Auth\\AuthController::pass'); // Ruta pública
 
         //LLAMADAS AL CONTROLADOR PARA EL FRONTED
+        $routes->post('ValoracionController/resumen/(:num)', 'ValoracionController::resumen/$1');
+        $routes->post('ValoracionController/obtenerValoracionUsuario', 'ValoracionController::obtenerValoracionUsuario');
+
         $routes->post('ComentarioController/eliminarComentario', 'ComentarioController::eliminarComentario');
         $routes->post('ComentarioController/comentarios', 'ComentarioController::comentarios');
         $routes->post('ComentarioController/guardarComentario', 'ComentarioController::guardarComentario');

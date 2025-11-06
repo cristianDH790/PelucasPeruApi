@@ -188,28 +188,7 @@
 					<form id="feedbackForm">
 						<div class="comentarios">
 
-							<!-- <div class="row">
-								<div class="comentario-item mb-3 p-4 border rounded shadow-sm bg-light">
-									<div class="d-flex justify-content-between align-items-center mb-2">
-										<h6 class="fw-bold mb-0 text-primary">Juan Pérez</h6>
-										<span class="text-muted small">
-											<i class="fa-solid fa-calendar-days"></i> 28 Oct 2025
-										</span>
-									</div>
 
-									<p class="text-dark mb-3" style="text-align: justify;">
-										Me encantó este producto, la calidad es excelente y la entrega fue muy rápida.
-										Realmente superó mis expectativas, los materiales son resistentes y el diseño es muy elegante.
-										Sin duda volveré a comprar en esta tienda, ¡muy recomendado!
-									</p>
-
-									<div class="d-flex justify-content-end">
-										<a href="#" class="text-danger fw-semibold text-decoration-none">
-											<i class="fa-solid fa-trash-can me-1"></i> Eliminar
-										</a>
-									</div>
-								</div>
-							</div> -->
 							<div class="row">
 								<div id="listaComentarios" class="col-12">
 									<!-- Aquí se insertarán los comentarios dinámicamente -->
@@ -222,14 +201,7 @@
 						<? if (session()->get('usuarioSesion')) : ?>
 
 							<div class="row">
-								<!-- <div class="col-md-6">
-									<label for="nombre">Nombres y Apellidos:</label>
-									<input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre completo" required>
-								</div>
-								<div class="col-md-6">
-									<label for="email">Correo Electrónico:</label>
-									<input type="email" id="email" name="email" placeholder="tu@email.com" required>
-								</div> -->
+
 								<div class="col-md-12">
 									<label for="comentario">Comentario:</label>
 									<textarea id="comentario" name="comentario" placeholder="Escribe aquí tu opinión..."></textarea>
@@ -247,14 +219,7 @@
 										<span style="color:red;" class="validacion captcha"></span>
 									</div>
 								</div>
-								<!-- <div class="col-md-12">
-									<div class="captcha">
-										<span class="captcha-code" id="captchaCode"></span>
-										<input type="text" id="captchaInput" placeholder="Ingresa el código" required>
-									</div>
-									<button type="submit">Enviar</button>
 
-								</div> -->
 								<button type="submit" class="btn-enviar">Enviar</button>
 							</div>
 						<? else : ?>
@@ -275,79 +240,6 @@
 		</div>
 	</div>
 </section>
-<!--  
-<section class="productos-relacionados">
-	<div class="container-fluid">
-		<div class="row">
-			<div class="col-md-12">
-
-				<h2>Productos relacionados</h2>
-
-				<section class="slider-home">
-					<div class="owl-carousel6 owl-theme">
-						<div class="item">
-							<div class="bg-image">
-								<a href="<?= base_url(); ?>producto-detalle">
-									<img src="<?= base_url(); ?>public/template/images/productos/PELUCA-ARIA.jpg" class="img1" alt="">
-								</a>
-								<a href="<?= base_url(); ?>producto-detalle">
-									<img src="<?= base_url(); ?>public/template/images/productos/PELUCA-ARIA.jpg" class="img2" alt="">
-								</a>
-							</div>
-							<div class="bg-resumen">
-								<h3>Peluca Barbara</h3>
-								<div class="box-precio">
-									<h5>S/ 150.00</h6>
-								</div>
-								<div class="btns">
-									<a href="<?= base_url(); ?>producto-detalle" class="comprar">Comprar</a>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="bg-image">
-								<a href="<?= base_url(); ?>producto-detalle">
-									<img src="<?= base_url(); ?>public/template/images/productos/PELUCA-BARBARA.jpg" class="img1" alt="">
-								</a>
-								<a href="<?= base_url(); ?>producto-detalle">
-									<img src="<?= base_url(); ?>public/template/images/productos/PELUCA-CLARA.jpg" class="img2" alt="">
-								</a>
-							</div>
-							<div class="bg-resumen">
-								<h3>Peluca Barbara</h3>
-								<div class="box-precio">
-									<h5>S/ 150.00</h5>
-								</div>
-								<div class="btns">
-									<a href="<?= base_url(); ?>producto-detalle" class="comprar">Comprar</a>
-								</div>
-							</div>
-						</div>
-						<div class="item">
-							<div class="bg-image">
-								<a href="<?= base_url(); ?>producto-detalle">
-									<img src="<?= base_url(); ?>public/template/images/productos/PELUCA-AMARA.jpg" class="img1" alt="">
-								</a>
-								<a href="<?= base_url(); ?>producto-detalle">
-									<img src="<?= base_url(); ?>public/template/images/productos/PELUCA-AMARA.jpg" class="img2" alt="">
-								</a>
-							</div>
-							<div class="bg-resumen">
-								<h3>Peluca Barbara</h3>
-								<div class="box-precio">
-									<h5>S/ 150.00</h5>
-								</div>
-								<div class="btns">
-									<a href="#" class="comprar">Comprar</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-</section> -->
 
 
 <? if (!empty($productosrelacionados)): ?>
@@ -422,11 +314,39 @@
 
 
 	// const PRODUCTO_COLOR = <?= json_encode($producto) ?>;
-	document.addEventListener("DOMContentLoaded", function() {
+	document.addEventListener("DOMContentLoaded", async function() {
 
 		showImageProducto(PRODUCTO.idproducto);
 		cargarComentarios();
 
+		obtenerResumenValoraciones(PRODUCTO.idproducto);
+		//porcentaje de estrellas 
+		// Datos iniciales de ejemplo
+
+
+		if (typeof USUARIO_LOGIN !== "undefined" && USUARIO_LOGIN && USUARIO_LOGIN.idusuario) {
+			try {
+				const response = await fetch("<?= base_url() ?>api/ValoracionController/obtenerValoracionUsuario", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						idProducto: PRODUCTO.idproducto,
+						idUsuario: USUARIO_LOGIN.idusuario,
+					}),
+				});
+
+				const data = await response.json();
+				console.log("Valoración del usuario:", data);
+
+				if (data.status === "exito" && data.valoracion) {
+					actualizarEstrellas(PRODUCTO.idproducto, data.valoracion);
+				}
+			} catch (error) {
+				console.error("Error al obtener valoración del usuario:", error);
+			}
+		}
 	});
 
 
@@ -703,6 +623,7 @@
 
 					// 🔥 Pinta las estrellas seleccionadas
 					actualizarEstrellas(idproducto, numero);
+					obtenerResumenValoraciones(PRODUCTO.idproducto);
 				} else {
 					Swal.fire({
 						title: "¡Valoración de publicación!",
@@ -814,7 +735,69 @@
 			carga.style.display = 'none'; // ocultar loader
 		}
 	}
+	//obtener porcentaje de estrellas
+	async function obtenerResumenValoraciones(idproducto) {
+		try {
+			const response = await fetch(`<?= base_url() ?>api/ValoracionController/resumen/${idproducto}`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				}
+			});
+			const data = await response.json();
 
+			if (response.ok) {
+				console.log("Resumen:", data);
+				renderResumen(data); // función para mostrarlo
+			} else {
+				console.error("Error:", data);
+			}
+		} catch (error) {
+			console.error("Error en la petición:", error);
+		}
+	}
+
+
+
+	function renderResumen(data) {
+		const summary = document.getElementById('ratingSummary');
+		const averageText = document.getElementById('averageText');
+
+		// Si aún no hay data o ratings vacíos
+		if (!data || !data.ratings) {
+			summary.innerHTML = '<p>No hay valoraciones aún.</p>';
+			averageText.textContent = 'Promedio: 0 / 5';
+			return;
+		}
+
+		const ratings = data.ratings;
+		const average = data.average;
+
+		summary.innerHTML = '';
+		averageText.textContent = `Promedio: ${average} / 5`;
+
+		const total = Object.values(ratings).reduce((a, b) => a + b, 0);
+
+		// Si el total es 0, mostrar vacío
+		if (total === 0) {
+			summary.innerHTML = '<p>No hay valoraciones aún.</p>';
+			return;
+		}
+
+		Object.entries(ratings)
+			.sort((a, b) => b[0] - a[0]) // 5→1
+			.forEach(([stars, count]) => {
+				const percent = ((count / total) * 100).toFixed(1);
+				const row = document.createElement('div');
+				row.classList.add('rating-row');
+				row.innerHTML = `
+                <div class="stars-label">${'★'.repeat(stars)}</div>
+                <progress value="${percent}" max="100"></progress>
+                <div class="percent">${percent}%</div>
+            `;
+				summary.appendChild(row);
+			});
+	}
 
 
 	async function eliminarComentario(idComentario) {

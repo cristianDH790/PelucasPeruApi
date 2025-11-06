@@ -331,62 +331,62 @@
 		codigoActual = generarCaptcha();
 	});
 
-	// Datos iniciales de ejemplo
-	let ratings = {
-		5: 10,
-		4: 5,
-		3: 3,
-		2: 1,
-		1: 0
-	};
+		// Datos iniciales de ejemplo
+		let ratings = {
+			5: 10,
+			4: 5,
+			3: 3,
+			2: 1,
+			1: 0
+		};
 
-	const stars = document.querySelectorAll('.star');
-	const summary = document.getElementById('ratingSummary');
-	const averageText = document.getElementById('averageText');
+		const stars = document.querySelectorAll('.star');
+		const summary = document.getElementById('ratingSummary');
+		const averageText = document.getElementById('averageText');
 
-	function renderSummary() {
-		summary.innerHTML = '';
-		const total = Object.values(ratings).reduce((a, b) => a + b, 0) || 1;
-		const average = (
-			Object.entries(ratings).reduce((sum, [k, v]) => sum + k * v, 0) / total
-		).toFixed(1);
-		averageText.textContent = `Promedio: ${average} / 5`;
+		function renderSummary() {
+			summary.innerHTML = '';
+			const total = Object.values(ratings).reduce((a, b) => a + b, 0) || 1;
+			const average = (
+				Object.entries(ratings).reduce((sum, [k, v]) => sum + k * v, 0) / total
+			).toFixed(1);
+			averageText.textContent = `Promedio: ${average} / 5`;
 
-		Object.entries(ratings)
-			.sort((a, b) => b[0] - a[0]) // 5→1
-			.forEach(([stars, count]) => {
-				const percent = ((count / total) * 100).toFixed(1);
-				const row = document.createElement('div');
-				row.classList.add('rating-row');
-				row.innerHTML = `
-          <div class="stars-label">${'★'.repeat(stars)}</div>
-          <progress value="${percent}" max="100"></progress>
-          <div class="percent">${percent}%</div>
-        `;
-				summary.appendChild(row);
+			Object.entries(ratings)
+				.sort((a, b) => b[0] - a[0]) // 5→1
+				.forEach(([stars, count]) => {
+					const percent = ((count / total) * 100).toFixed(1);
+					const row = document.createElement('div');
+					row.classList.add('rating-row');
+					row.innerHTML = `
+			<div class="stars-label">${'★'.repeat(stars)}</div>
+			<progress value="${percent}" max="100"></progress>
+			<div class="percent">${percent}%</div>
+			`;
+					summary.appendChild(row);
+				});
+		}
+
+		// Inicializar gráfico
+		renderSummary();
+
+		// Hover y clic en estrellas
+		function resetHover() {
+			stars.forEach(s => s.classList.remove('hover'));
+		}
+
+		stars.forEach(star => {
+			star.addEventListener('mouseover', () => {
+				resetHover();
+				for (let i = 0; i < star.dataset.value; i++) stars[i].classList.add('hover');
 			});
-	}
-
-	// Inicializar gráfico
-	renderSummary();
-
-	// Hover y clic en estrellas
-	function resetHover() {
-		stars.forEach(s => s.classList.remove('hover'));
-	}
-
-	stars.forEach(star => {
-		star.addEventListener('mouseover', () => {
-			resetHover();
-			for (let i = 0; i < star.dataset.value; i++) stars[i].classList.add('hover');
+			star.addEventListener('mouseout', resetHover);
+			star.addEventListener('click', () => {
+				const value = parseInt(star.dataset.value);
+				ratings[value]++; // Suma un voto
+				renderSummary(); // Actualiza las barras
+				stars.forEach(s => s.classList.remove('active'));
+				for (let i = 0; i < value; i++) stars[i].classList.add('active');
+			});
 		});
-		star.addEventListener('mouseout', resetHover);
-		star.addEventListener('click', () => {
-			const value = parseInt(star.dataset.value);
-			ratings[value]++; // Suma un voto
-			renderSummary(); // Actualiza las barras
-			stars.forEach(s => s.classList.remove('active'));
-			for (let i = 0; i < value; i++) stars[i].classList.add('active');
-		});
-	});
 </script>

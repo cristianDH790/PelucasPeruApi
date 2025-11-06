@@ -349,8 +349,8 @@ class Front extends BaseController
 			// $data['recojos'] = $newRecojo->buscarPor('fecha', 'desc', '', '', 335, $usuarioSesion->idusuario, 0, 0, 0);
 			$data['comprobantes'] = $newComprobante->buscarPor('fecha', 'desc', '', '', 363, $usuarioSesion->idusuario, 0, 0, 0);
 			$data['usuario'] = $usuarioSesion;
-			// var_dump($data['usuario']);
-			// die();
+			// var_dump($data['comprobantes']);
+			// die();	
 			$this->front_views("front/body/miCuenta", $data);
 		} else {
 			return redirect()->to(base_url());
@@ -617,6 +617,7 @@ class Front extends BaseController
 				"amount"   => $amount,
 				"currency" => 'PEN',
 				"orderId"  => $operacion,
+
 				"customer" => [
 					"email" => $correo,
 					"reference" => $documento,
@@ -635,6 +636,7 @@ class Front extends BaseController
 							]
 						]
 					]
+
 				]
 			];
 
