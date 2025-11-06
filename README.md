@@ -1,68 +1,79 @@
-# CodeIgniter 4 Application Starter
+<h1 align="center">⚙️ API Backend — Pelucas Perú (CodeIgniter 4)</h1>
 
-## What is CodeIgniter?
+<img width="1898" height="957" alt="imagen" src="https://github.com/user-attachments/assets/64347313-fc2f-421b-945e-cbc37659ee86" />
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+<p align="center">
+  Este proyecto es una <strong>API RESTful</strong> desarrollada con <strong>CodeIgniter 4</strong>, diseñada para proporcionar la infraestructura backend del sistema <strong>Pelucas Perú</strong>.  
+  Se encarga de gestionar datos de usuarios, productos, pedidos, configuraciones y más, garantizando una comunicación segura y eficiente con el frontend desarrollado en Angular.
+</p>
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+---
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## ⚡ Requisitos Previos
 
-## Installation & updates
+> Antes de ejecutar este proyecto, asegúrate de tener las siguientes herramientas instaladas 🧰
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+| 🧩 Herramienta       | 💻 Versión Recomendada | 🌐 Enlace Oficial |
+|----------------------|------------------------|------------------|
+| 🐘 **PHP**           | 8.2+                   | [php.net](https://www.php.net/) |
+| 🧱 **Composer**      | 2.x                    | [getcomposer.org](https://getcomposer.org/) |
+| 🗃️ **MySQL / MariaDB** | 10.4+               | [mariadb.org](https://mariadb.org/) |
+| 🚀 **CodeIgniter 4** | Última versión estable | [codeigniter.com](https://codeigniter.com/) |
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+---
 
-## Setup
+### 🧪 Verificar Instalación
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Comprueba si tienes instaladas las dependencias básicas:
 
-## Important Change with index.php
+```bash
+php -v
+composer -V
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+# Clonar el repositorio
+git clone https://github.com/cristianDH790/PelucasPeruApi.git
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+# Entrar al proyecto
+cd PelucasPeruApi
 
-**Please** read the user guide for a better explanation of how CI4 works!
+# Instalar dependencias
+composer install
 
-## Repository Management
+# Copiar el archivo de entorno
+cp env .env
+```
+## ⚙️ Configuración del Entorno
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+Edita el archivo `.env` para configurar tu base de datos:
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+```env
+CI_ENVIRONMENT = development
 
-## Server Requirements
+database.default.hostname = localhost
+database.default.database = pelucasperu_db
+database.default.username = root
+database.default.password = 
+database.default.DBDriver = MySQLi
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+```
+## 🔗 Proyecto Relacionado (Frontend)
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+Este backend funciona junto con el panel administrador desarrollado en Angular:  
+👉 [PelucasPeruAngular](https://github.com/cristianDH790/PelucasPeruAngular)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+## 📸 Vista en Producción
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+✨ Puedes ver el sistema en línea aquí:  
+👉 [https://pelucasperu.com/](https://pelucasperu.com/)
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+---
+
+<div align="center">
+
+🧑‍💻 Desarrollado con ❤️ por **Cristian DH**  
+📜 Proyecto backend oficial para Pelucas Perú
+
+</div>
+
+
